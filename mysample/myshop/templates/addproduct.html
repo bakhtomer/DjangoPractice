@@ -1,0 +1,24 @@
+<!-- i am extending the predmade layout provided by jango onlly form ist impllemented here-->
+        {% extends "layout/layout.html" %}   <!--in the quotations is the address of the layout file that is inside the layout folder-->
+<!-- now to attach your html work with the layout enclose all your work in the following curly brakects , used -->
+    {% block content%}
+
+<form method="post" enctype="multipart/form-data" class="form-group form-horzental">
+
+
+    {%csrf_token%}
+    {% for object in form %}
+    <br />
+    {{object.label }}
+    {{object}}
+
+    <br />
+    {% endfor %}
+    <input type="submit" name="" value="Save" class="btn btn-primary" />
+
+</form>
+{% if product %}
+<a href="{% url 'deleteproduct' product.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'productslist'%}" class="btn btn-primary">Cancel</a>
+ {%endif%}
+    {%endblock%}

@@ -1,0 +1,13 @@
+﻿{%extends "layout/layout.html"%}
+
+
+{% block content %}
+        <p>
+            <h3>Are You Sure you want To Delete..</h3>
+            <h4>{{product}}</h4>
+        </p>
+        <form method="post" enctype="multipart/form-data" class="form-group">
+            {%csrf_token%}
+            <input type="submit"class="btn btn-danger" value="Confirm!"> 
+        </form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\mysample",
+    "\\myshop",
+    "\\myshop\\static",
+    "\\myshop\\static\\pics",
+    "\\myshop\\templates",
+    "\\myshop\\Views",
+    "\\static",
+    "\\static\\productsimage"
+  ],
+  "SelectedNode": "\\myshop\\models.py",
+  "PreviewInSolutionExplorer": false
+}

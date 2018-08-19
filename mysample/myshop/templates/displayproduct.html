@@ -1,0 +1,47 @@
+﻿{% extends "layout/layout.html" %}
+
+{% block content %}
+
+
+<table class='table table-striped'>
+
+    <thead class="thead-dark">
+        <h3>...Products...</h3>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Price</b></td>
+            <td><b>Size</b></td>
+            <td><b>Pic</b></td>
+
+        </tr>
+
+
+        {% for pr in objects %}
+        <tr>
+
+            <td>
+                <a href="{% url 'updateproduct' pr.id %} "> 
+                     {{ pr.prd_name  }}
+
+                </a>
+            </td>
+
+            <td>{{  pr.prd_price    }}</td>
+            <td>{{  pr.prd_size     }}</td>
+            <td>
+                {% load static %}
+                <img src="{{pr.prd_pic.url }}" width='100px' height="100px " class="img-responsive">
+            </td>
+
+
+
+        </tr>
+        {% endfor%}
+
+</table>
+<a href="{% url 'addproduct' %}" class="btn btn-primary">Add Product</a>
+
+
+{%endblock%}
